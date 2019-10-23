@@ -1,4 +1,4 @@
-#ifndef CAGORAOBJECT_H
+﻿#ifndef CAGORAOBJECT_H
 #define CAGORAOBJECT_H
 
 #include <Memory>

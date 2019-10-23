@@ -1,6 +1,7 @@
-#include "agoraobject.h"
+﻿#include "agoraobject.h"
 #include <qmessagebox.h>
 #include <cassert>
+#include "stdafx.h"
 
 class AgoraRtcEngineEvent : public agora::rtc::IRtcEngineEventHandler
 {
@@ -72,8 +73,17 @@ CAgoraObject::CAgoraObject(QObject *parent):
 {
     agora::rtc::RtcEngineContext context;
     context.eventHandler = m_eventHandler.get();
-    context.appId = APP_ID;
-    if (*context.appId == '\0')
+    QByteArray temp;
+    if(strlen(APP_ID))
+        context.appId = APP_ID;
+    else {
+        QString strAppId = gAgoraConfig.getAppId();
+        if(!strAppId.isEmpty()) {
+            temp = strAppId.toUtf8();
+            context.appId = temp.data();
+        }
+    }
+    if (nullptr == context.appId || *context.appId == '\0')
     {
         QMessageBox::critical(nullptr, ("AgoraOpenLive"),
                                        ("You must specify APP ID before using the demo"));
