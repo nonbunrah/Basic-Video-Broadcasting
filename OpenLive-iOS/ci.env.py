@@ -17,6 +17,18 @@ def main():
     FRAMEWORK_NAME = "AgoraRtcKit.framework"
     APP_NAME = "OpenLive"
 
+    rm = "rm -r " + TARGET_LIBS_ZIP
+    os.system(rm)
+    
+    rm = "rm -r " + TARGET_INTERNAL_FOLDER
+    os.system(rm)
+    
+    rm = "rm -r " + APP_NAME + "/" + FRAMEWORK_NAME
+    os.system(rm)
+    
+    rm = "rm -r " + APP_NAME + "/" + CRY_FRAMEWORK_NAME
+    os.system(rm)
+
     wget = "wget -q " + SDK_URL + " -O " + TARGET_LIBS_ZIP
     os.system(wget)
     
