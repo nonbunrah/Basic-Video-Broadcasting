@@ -5,7 +5,7 @@
 
 trigger:
 - master
-- dev/3.0.0
+- dev/*
 
 variables:
   iOSRTCSDK: 'https://release.agoralab.co/disk/v3.0.0_IOS_SO/AgoraSDK/iOS/Agora_Native_SDK_for_iOS_v3_0_0_FULL_20191119_1479.zip'
