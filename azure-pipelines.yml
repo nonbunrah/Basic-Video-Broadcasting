@@ -31,14 +31,14 @@ jobs:
     scheme: 'OpenLive'
     sdkurl: $(iOSRTCSDK)
 
-- template: cicd/templates/build-ios.yml
+- template: cicd/templates/build-mac.yml
   parameters:
     displayName: 'MacSwiftOpenLive'
     workingDirectory: 'OpenLive-macOS'
     scheme: 'OpenLive'
     sdkurl: $(MacRTCSDK)
 
-- template: cicd/templates/build-ios.yml
+- template: cicd/templates/build-mac.yml
   parameters:
     displayName: 'MacOCOpenLive'
     workingDirectory: 'OpenLive-macOS-Objective-C'
